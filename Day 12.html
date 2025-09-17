@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //set is a collection of unique values.It automaticallly removes duplicates.
+
+        let email = new Set([]);
+        email.add("js@gmail.com");
+        email.add("java@gmail.com");
+        email.add("py@gmail.com");
+        email.add("py@gmail.com");
+        console.log(email);
+        email.delete("py@gmail.com");
+        console.log(email);
+        // email.clear();
+        // console.log(email);
+        for(let mailId of email){
+            console.log(mailId);
+
+        }
+        email.forEach(x=>{
+            console.log(x);
+        })
+        let admin=new Set(["Write","Read","Delete"]);
+        let user=new Set(["Read"]);
+
+        function haspermission(role,granted){
+            return role.has(granted);
+        }
+        console.log(haspermission(admin,"Delete")); 
+        console.log(haspermission(user,"Read"));
+
+        let setA =new Set([1,2,3,4,5,1]);
+        let setB =new Set([6,7,8,9,10,1]);
+
+        let union = new Set([...setA, ...setB]);
+        console.log(union);
+        let intersection = new Set([...setA].filter(x => setB.has(x)));
+        console.log(intersection);
+        let difference = new Set([...setA].filter(x => !setB.has(x)));
+        console.log(difference);
+
+        //Return a new itreator object with [value,value]pair.
+        //this is because a ste has no seperate key - only value.
+
+        // weakmap
+        // A javaScript WeakMap is a collection of key/value pairs.
+        // where the key must be object.
+
+        let user2={ name: "java" };
+        let user1={ name: "python" };
+
+        let mymap=new Map();
+        mymap.set(user1, "welcome");
+        mymap.set(user2, "welcome python");
+        console.log(mymap);
+
+        for(let map of mymap){
+            console.log(map);
+        }
+
+    </script>
+</body>
+</html>
