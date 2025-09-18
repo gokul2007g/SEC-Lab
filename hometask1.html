@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple JavaScript Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple JavaScript Calculator</h1>
+    <p>Open the browser console to see the results.</p>
+
+    <script>
+        let num1 = parseFloat(prompt("Enter the first number:"));
+        let num2 = parseFloat(prompt("Enter the second number:"));
+
+        const sum = num1 + num2;
+        const difference = num1 - num2;
+        const product = num1 * num2;
+        const quotient = (num2 !== 0) ? (num1 / num2) : "Cannot divide by zero";
+        const remainder = (num2 !== 0) ? (num1 % num2) : "Cannot modulo by zero";
+
+        console.log("==== Calculator Results ====");
+        console.log(`First Number (num1): ${num1}`);
+        console.log(`Second Number (num2): ${num2}`);
+        console.log(`Sum: ${sum}`);
+        console.log(`Difference: ${difference}`);
+        console.log(`Product: ${product}`);
+        console.log(`Quotient: ${quotient}`);
+        console.log(`Remainder: ${remainder}`);
+        console.log("============================");
+        document.write(`<div class="result">
+            <strong>Check the console for full results</strong>
+        </div>`);
+    </script>
+</body>
+</html>
