@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Definition:
+    // Local Storage allows saving data in the browser without an expiration date.
+    // Data is available even after closing and reopening the browser.
+
+    // Syntax:
+    // localStorage.setItem('key', 'value'); // Store data
+    // localStorage.getItem('key'); // Retrieve data
+    // localStorage.removeItem('key'); // Remove data
+    // localStorage.clear(); // Clear all data
+
+
+    localStorage.setItem("username", "john");
+    console.log(localStorage.getItem("username"));
+    localStorage.removeItem("username");
+    localStorage.clear();
+
+    //Storing Array values in Local Storage.
+    let detail=["john", "30", "Developer"];
+    localStorage.setItem("detail", JSON.stringify(detail))
+    let strddetail=JSON.parse(localStorage.getItem("detail"));
+    console.log(strddetail)
+
+
+    //array of object
+    let marks=[
+        {
+            "math":60,
+            "Js":0
+        },
+    ];
+     localStorage.setItem("detail", JSON.stringify(detail))
+    let strddata=JSON.parse(localStorage.getItem("detail"));
+    console.log(strddata);
+
+
+    //sessionStorage Syntax
+    sessionStorage.setItem("key", "value");
+    sessionStorage.setItem("key")
+
+    </script>
+
+</body>
+</html>
