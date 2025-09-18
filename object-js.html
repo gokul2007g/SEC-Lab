@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// //An Array of objects is a collection where each element is an object with properties.
+// //This is used to group related data together in a structured way.
+//         let details={
+//             name:"js",
+//             totalmark:100,
+
+//             subject:{
+//                dbms:100,
+//                java:100 
+//             },
+//             sum:function(){
+//                 let total=this.subject.dbms+this.subject.java;
+//                 return total;
+//             }
+//             //Object Destructuring is a syntax in JavaScript that allows you to extract values from objects and assign 
+//             //them to variables in a clean and readable way
+//         } 
+//         console.log(details.name);
+//         console.log(details["totalmark"]);
+//         console.log(details.subject.dbms);
+//         console.log(details.subject["java"]);
+//         console.log(details.sum());
+
+        let person={
+            job:"SoftwareTester",
+            salary:25000
+        }
+        const{job:firstkey,salary:secondkey}=person
+        console.log(firstkey+" "+secondkey);
+
+    let arr=new Array(1,2,"three");
+    console.log(arr[2]);
+
+    let arr2=["js",true];
+    console.log(arr2[0]);
+//Array destructuring
+    const[name,b1,b2]=arr2;
+    console.log(name)
+
+//1.filter-Returns a new array containing only the elements that match a condition.
+//     let student=[
+//         {name:"Saam",grade:"A"},
+//         {name:"Karthic",grade:"B"}
+        
+//     ]
+//     let gradedstudents=students.filter(student => students.grade==="A")
+//     console.log(gradedstudents);
+
+// 2.splice
+//     let data=[1,2,3,4,5];
+//     let result=data.splice(2,4);
+//     console.log(result);
+
+//     let names=["Asha", "Bala", "Charan"];
+//     names.splice(1,1, "David");
+//     console.log(names);
+    </script>
+</body>
+</html>
