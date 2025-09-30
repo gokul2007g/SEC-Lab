@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .slider {
+            width: 500px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #Next, #Prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #Next {
+            right: 10px;
+        }
+        #Prev {
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img id="sliderImage" src="image1.jpeg" class="slide-image" alt="slider image">
+        <button id="Next">Next</button>
+        <button id="Prev">Previous</button>
+    </div>
+
+    <script>
+        const images = ["image1.jpeg", "image2.jpeg", "image3.jpeg", "image4.jpeg", "image5.jpeg"];
+        let currentIndex = 0;
+
+        const imageElement = document.getElementById("sliderImage");
+        const prevBtn = document.getElementById("Prev");
+        const nextBtn = document.getElementById("Next");
+
+        function updateImage() {
+            imageElement.src = images[currentIndex];
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
+        
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }, 2000);
+    </script>
+</body>
+</html>
