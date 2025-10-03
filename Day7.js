@@ -1,7 +1,7 @@
 
 let current = new Date("2024-08-08");
 let day = current.getDay();
-console.log(current)//unit
+console.log(current)
 console.log(current.toString());
 console.log(day);
 
