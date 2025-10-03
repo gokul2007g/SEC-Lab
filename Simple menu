@@ -1,0 +1,77 @@
+Got it 👍
+Here’s a clean JavaScript program that meets all your requirements:
+
+// Simple Menu-Driven Calculator
+
+let choice;
+do {
+    // Show menu
+    console.log("\n=== Calculator Menu ===");
+    console.log("1. Add");
+    console.log("2. Subtract");
+    console.log("3. Multiply");
+    console.log("4. Divide");
+    console.log("5. Exit");
+
+    choice = parseInt(prompt("Enter your choice (1-5): "));
+
+    switch (choice) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            // Take input numbers
+            let num1 = prompt("Enter first number: ");
+            let num2 = prompt("Enter second number: ");
+
+            // Validate inputs
+            if (isNaN(num1) || isNaN(num2) || num1 === "" || num2 === "") {
+                console.log("❌ Invalid input! Please enter valid numbers.");
+                continue; // re-prompt the menu
+            }
+
+            num1 = Number(num1);
+            num2 = Number(num2);
+
+            // Perform operation
+            if (choice === 1) {
+                console.log(`✅ Result: ${num1} + ${num2} = ${num1 + num2}`);
+            } else if (choice === 2) {
+                console.log(`✅ Result: ${num1} - ${num2} = ${num1 - num2}`);
+            } else if (choice === 3) {
+                console.log(`✅ Result: ${num1} * ${num2} = ${num1 * num2}`);
+            } else if (choice === 4) {
+                if (num2 === 0) {
+                    console.log("❌ Division by zero is not allowed.");
+                    continue;
+                }
+                console.log(`✅ Result: ${num1} / ${num2} = ${num1 / num2}`);
+            }
+            break;
+
+        case 5:
+            console.log("👋 Exiting Calculator. Goodbye!");
+            break;
+
+        default:
+            console.log("❌ Invalid choice! Please enter between 1-5.");
+            continue;
+    }
+
+} while (choice !== 5);
+
+🔑 Features:
+
+Switch for menu options.
+
+do-while loop to repeat menu until Exit.
+
+if-else validation for checking number inputs.
+
+break to exit when user selects Exit.
+
+continue to re-prompt on invalid input.
+
+
+👉 Do you want me to make this run in a browser (with prompt() and alert()) or in Node.js (console-based input with readline)?
+
